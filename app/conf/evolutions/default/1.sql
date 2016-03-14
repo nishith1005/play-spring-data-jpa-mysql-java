@@ -2,8 +2,8 @@
  
 # --- !Ups
  
-CREATE TABLE `person` (
-  `id` int(11) unsigned NOT NULL,
+CREATE TABLE `Person` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `firstname` varchar(255) DEFAULT NULL,
   `lastname` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -11,4 +11,5 @@ CREATE TABLE `person` (
  
 # --- !Downs
  
-DROP TABLE User;
+DROP TABLE Person;
+

@@ -1,5 +1,5 @@
 FROM ubuntu
-MAINTAINER Nishith <nishith@koovs.com>
+MAINTAINER Nishith <lucky1005@gmail.com>
 
 ENV LANG C.UTF-8
 
@@ -34,14 +34,12 @@ ADD supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
 # Define commonly used JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
-
+#ADD APP
 RUN mkdir /app
 WORKDIR /app
-RUN git clone https://github.com/Stealth-proj/SOA-SERVICES.git .
+ADD app /app
 ENV PATH $PATH:/app
 
 EXPOSE 9000
 
-#ENTRYPOINT [ "activator"]
-#CMD ["run", "-D", "FOREGROUND"]
 CMD ["/run.sh"]
